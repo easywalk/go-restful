@@ -2,8 +2,8 @@ package handler
 
 import (
 	"database/sql"
-	"github.com/easywalk/go-restful/easywalk"
-	"github.com/easywalk/go-restful/easywalk/service"
+	"github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful/service"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"gorm.io/gorm"

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/easywalk/go-restful/easywalk"
-	"github.com/easywalk/go-restful/easywalk/repository"
+	"github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful/repository"
 	"github.com/google/uuid"
 )
 
