@@ -7,6 +7,7 @@ import (
 	"log"
 	"reflect"
 	"strings"
+	"time"
 )
 
 type SimplyRepository[T easywalk.SimplyEntityInterface] struct {
@@ -18,6 +19,7 @@ type SimplyRepository[T easywalk.SimplyEntityInterface] struct {
 // @return uuid of created entity, error
 func (r *SimplyRepository[T]) Create(data T) (uuid.UUID, error) {
 	data.SetID(uuid.New())
+	data.SetCreatedAt(time.Now())
 	tx := r.DB.Create(&data)
 	if tx.Error != nil {
 		log.Printf("Error in repository Create operation - %v", tx.Error)
