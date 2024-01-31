@@ -15,6 +15,6 @@ type SimplyServiceInterface[T easywalk.SimplyEntityInterface] interface {
 	FindAll(mapFields map[string]any) ([]T, error)
 }
 
-func NewGenericService[T easywalk.SimplyEntityInterface](repo repository.SimplyRepositoryInterface[T]) SimplyServiceInterface[T] {
+func NewService[T easywalk.SimplyEntityInterface](repo repository.SimplyRepositoryInterface[T]) SimplyServiceInterface[T] {
 	return &SimplyService[T]{Repo: repo}
 }

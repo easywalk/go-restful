@@ -23,7 +23,7 @@ type SimplyRepositoryInterface[T easywalk.SimplyEntityInterface] interface {
 // @example
 //
 //	repo := NewSimplyRepository(db)
-func NewSimplyRepository[T easywalk.SimplyEntityInterface](db *gorm.DB) SimplyRepositoryInterface[T] {
+func NewRepository[T easywalk.SimplyEntityInterface](db *gorm.DB) SimplyRepositoryInterface[T] {
 	var table T
 	db.AutoMigrate(&table)
 	return &SimplyRepository[T]{DB: db}
