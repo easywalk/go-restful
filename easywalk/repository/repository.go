@@ -1,12 +1,12 @@
-package easywalk
+package repository
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk/repository"
+	"github.com/easywalk/go-restful/easywalk"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )
 
-type SimplyRepositoryInterface[T SimplyEntityInterface] interface {
+type SimplyRepositoryInterface[T easywalk.SimplyEntityInterface] interface {
 	Create(data T) (uuid.UUID, error)
 	Update(id uuid.UUID, mapFields map[string]any) (int64, error)
 	Delete(id uuid.UUID) (int64, error)
@@ -23,8 +23,8 @@ type SimplyRepositoryInterface[T SimplyEntityInterface] interface {
 // @example
 //
 //	repo := NewSimplyRepository(db)
-func NewSimplyRepository[T SimplyEntityInterface](db *gorm.DB) SimplyRepositoryInterface[T] {
+func NewSimplyRepository[T easywalk.SimplyEntityInterface](db *gorm.DB) SimplyRepositoryInterface[T] {
 	var table T
 	db.AutoMigrate(&table)
-	return &repository.SimplyRepository[T]{DB: db}
+	return &SimplyRepository[T]{DB: db}
 }

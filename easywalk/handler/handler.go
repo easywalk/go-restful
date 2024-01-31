@@ -1,7 +1,8 @@
-package easywalk
+package handler
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk/handler"
+	"github.com/easywalk/go-restful/easywalk"
+	"github.com/easywalk/go-restful/easywalk/service"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,8 +15,8 @@ type GenericHandlerInterface[T any] interface {
 	FindAll(c *gin.Context)
 }
 
-func NewHandler[T SimplyEntityInterface](group *gin.RouterGroup, svc SimplyServiceInterface[T]) GenericHandlerInterface[T] {
-	handlers := &handler.SimplyHandler[T]{Svc: svc}
+func NewHandler[T easywalk.SimplyEntityInterface](group *gin.RouterGroup, svc service.SimplyServiceInterface[T]) GenericHandlerInterface[T] {
+	handlers := &SimplyHandler[T]{Svc: svc}
 
 	group.POST("", handlers.Create)
 	group.PATCH(":id", handlers.Update)

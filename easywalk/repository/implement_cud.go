@@ -1,12 +1,13 @@
 package repository
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk"
+	"github.com/easywalk/go-restful/easywalk"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"log"
 	"reflect"
 	"strings"
+	"time"
 )
 
 type SimplyRepository[T easywalk.SimplyEntityInterface] struct {
@@ -18,6 +19,10 @@ type SimplyRepository[T easywalk.SimplyEntityInterface] struct {
 // @return uuid of created entity, error
 func (r *SimplyRepository[T]) Create(data T) (uuid.UUID, error) {
 	data.SetID(uuid.New())
+
+	currentTime := time.Now()
+	data.SetCreatedAt(currentTime)
+	data.SetUpdatedAt(currentTime)
 	tx := r.DB.Create(&data)
 	if tx.Error != nil {
 		log.Printf("Error in repository Create operation - %v", tx.Error)
@@ -49,6 +54,7 @@ func (r *SimplyRepository[T]) Update(id uuid.UUID, mapFields map[string]any) (in
 	}
 
 	// update T
+	fromDB.SetUpdatedAt(time.Now())
 	tx := r.DB.Save(&fromDB)
 	if tx.Error != nil {
 		log.Printf("Error in repository UpdateByID operation - %v", tx.Error)

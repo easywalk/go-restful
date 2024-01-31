@@ -1,4 +1,4 @@
-module github.com/easywalk/restful
+module github.com/easywalk/go-restful
 
 go 1.21.5
 
