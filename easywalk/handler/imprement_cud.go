@@ -2,15 +2,15 @@ package handler
 
 import (
 	"database/sql"
-	go_easywalk "github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"net/http"
 )
 
-type SimplyHandler[T go_easywalk.SimplyEntityInterface] struct {
-	Svc go_easywalk.SimplyServiceInterface[T]
+type SimplyHandler[T easywalk.SimplyEntityInterface] struct {
+	Svc easywalk.SimplyServiceInterface[T]
 }
 
 func (h SimplyHandler[T]) Create(c *gin.Context) {

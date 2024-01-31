@@ -1,4 +1,4 @@
-package go_easywalk
+package easywalk
 
 import (
 	"github.com/easywalk/go-restful/easywalk/repository"

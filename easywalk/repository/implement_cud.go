@@ -1,7 +1,7 @@
 package repository
 
 import (
-	go_easywalk "github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"log"
@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-type SimplyRepository[T go_easywalk.SimplyEntityInterface] struct {
+type SimplyRepository[T easywalk.SimplyEntityInterface] struct {
 	DB *gorm.DB
 }
 
