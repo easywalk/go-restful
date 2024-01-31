@@ -1,7 +1,7 @@
-package easywalk
+package go_easywalk
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk/handler"
+	"github.com/easywalk/go/restful/easywalk/handler"
 	"github.com/gin-gonic/gin"
 )
 

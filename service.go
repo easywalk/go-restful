@@ -1,7 +1,7 @@
-package easywalk
+package go_easywalk
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk/service"
+	"github.com/easywalk/go/restful/easywalk/service"
 	"github.com/google/uuid"
 )
 

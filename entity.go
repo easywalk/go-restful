@@ -1,4 +1,4 @@
-package easywalk
+package go_easywalk
 
 import "github.com/google/uuid"
 

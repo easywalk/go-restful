@@ -1,7 +1,7 @@
-package easywalk
+package go_easywalk
 
 import (
-	"github.com/easywalk/restful/pkg/easywalk/repository"
+	"github.com/easywalk/go/restful/easywalk/repository"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )
