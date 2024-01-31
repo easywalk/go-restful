@@ -51,6 +51,7 @@ func (r *SimplyRepository[T]) Update(id uuid.UUID, mapFields map[string]any) (in
 	}
 
 	// update T
+	fromDB.SetUpdatedAt(time.Now())
 	tx := r.DB.Save(&fromDB)
 	if tx.Error != nil {
 		log.Printf("Error in repository UpdateByID operation - %v", tx.Error)
