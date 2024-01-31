@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful/easywalk"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"log"

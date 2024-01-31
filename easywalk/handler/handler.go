@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful/easywalk"
 	"github.com/easywalk/go-restful/easywalk/service"
 	"github.com/gin-gonic/gin"
 )
