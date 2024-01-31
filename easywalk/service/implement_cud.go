@@ -3,11 +3,12 @@ package service
 import (
 	"database/sql"
 	"github.com/easywalk/go-restful"
+	"github.com/easywalk/go-restful/easywalk/repository"
 	"github.com/google/uuid"
 )
 
 type SimplyService[T easywalk.SimplyEntityInterface] struct {
-	Repo easywalk.SimplyRepositoryInterface[T]
+	Repo repository.SimplyRepositoryInterface[T]
 }
 
 func (s SimplyService[T]) Create(data T) (*T, error) {
