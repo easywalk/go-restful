@@ -27,3 +27,16 @@ type SimplyEntityInterface interface {
 	SetUpdatedAt(t time.Time)
 }
 ```
+
+## example
+
+```go
+r := gin.Default()
+group := r.Group("/files")
+
+repo := repository.NewSimplyRepository[*model.File](db) // db is *gorm.DB
+svc := service.NewGenericService[*model.File](repo) // svc is *service.GenericService[*model.File]
+handler.NewHandler[*model.File](group, svc) // group is *gin.RouterGroup
+r.Run()
+
+```
