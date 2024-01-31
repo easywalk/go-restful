@@ -2,7 +2,7 @@ package handler
 
 import (
 	"database/sql"
-	go_easywalk "github.com/easywalk/go/restful"
+	go_easywalk "github.com/easywalk/go-restful"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
