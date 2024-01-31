@@ -7,7 +7,7 @@ import (
 
 type SimplyEntityInterface interface {
 	GetID() uuid.UUID
-	SetID(uuid.UUID)
-	SetCreatedAt(time.Time)
-	SetUpdatedAt(time.Time)
+	SetID(id uuid.UUID)
+	SetCreatedAt(t time.Time)
+	SetUpdatedAt(t time.Time)
 }
